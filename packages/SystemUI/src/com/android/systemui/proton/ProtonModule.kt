@@ -17,6 +17,7 @@
 package com.android.systemui.proton
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
+import com.android.systemui.qs.tiles.CaffeineTile
 import com.android.systemui.qs.tiles.CellularTile
 import com.android.systemui.qs.tiles.WifiTile
 
@@ -27,6 +28,12 @@ import dagger.multibindings.StringKey
 
 @Module
 interface ProtonModule {
+    /** Inject CaffeineTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(CaffeineTile.TILE_SPEC)
+    fun bindCaffeineTile(caffeineTile: CaffeineTile): QSTileImpl<*>
+
     /** Inject CellularTile into tileMap in QSModule */
     @Binds
     @IntoMap
