@@ -74,14 +74,18 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackXperiaAndroidOverlay \
 	IconPackXperiaSettingsOverlay \
 	IconPackXperiaSystemUIOverlay \
+    IconShapeCloudyOverlay \
     IconShapeCylinderOverlay \
+    IconShapeFlowerOverlay \
     IconShapeHeartOverlay \
     IconShapeHexagonOverlay \
     IconShapeLeafOverlay \
     IconShapePebbleOverlay \
+    IconShapeRoundedHexagonOverlay \
     IconShapeRoundedRectOverlay \
     IconShapeSquareOverlay \
     IconShapeSquircleOverlay \
+    IconShapeStretchedOverlay \
     IconShapeTaperedRectOverlay \
     IconShapeTeardropOverlay \
     IconShapeVesselOverlay \
