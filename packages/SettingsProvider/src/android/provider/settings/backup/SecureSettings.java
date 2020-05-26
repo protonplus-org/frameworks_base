@@ -225,6 +225,7 @@ public class SecureSettings {
         Settings.Secure.LOCK_SCREEN_WEATHER_ENABLED,
         Settings.Secure.ACCESSIBILITY_FONT_SCALING_HAS_BEEN_CHANGED,
         Settings.Secure.DOZE_ON_CHARGE,
-        Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS
+        Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
+        Settings.Secure.BERRY_BLACK_THEME,
     };
 }
