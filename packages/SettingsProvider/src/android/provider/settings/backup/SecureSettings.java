@@ -227,5 +227,6 @@ public class SecureSettings {
         Settings.Secure.DOZE_ON_CHARGE,
         Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
         Settings.Secure.BERRY_BLACK_THEME,
+        Settings.Secure.GESTURE_NAVBAR_LENGTH_MODE,
     };
 }
