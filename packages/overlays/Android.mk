@@ -66,6 +66,7 @@ LOCAL_REQUIRED_MODULES := \
     IconPackOOSSystemUIOverlay \
     IconPackOOSThemePickerOverlay \
     IconPackAcherusAndroidOverlay \
+    IconPackAcherusSettingsOverlay \
     IconPackAcherusSystemUIOverlay \
 	NavigationBarMode3ButtonOverlay \
 	NavigationBarModeGesturalOverlay \
