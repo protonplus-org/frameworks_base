@@ -66,11 +66,15 @@ LOCAL_REQUIRED_MODULES := \
     IconPackOOSSystemUIOverlay \
     IconPackOOSThemePickerOverlay \
     IconPackAcherusAndroidOverlay \
+    IconPackAcherusLauncherOverlay \
     IconPackAcherusSettingsOverlay \
     IconPackAcherusSystemUIOverlay \
+    IconPackAcherusThemePickerOverlay \
     IconPackOutlineAndroidOverlay \
+    IconPackOutlineLauncherOverlay \
     IconPackOutlineSettingsOverlay \
     IconPackOutlineSystemUIOverlay \
+    IconPackOutlineThemePickerOverlay \
     IconPackXperiaAndroidOverlay \
     IconPackXperiaSettingsOverlay \
     IconPackXperiaSystemUIOverlay \
