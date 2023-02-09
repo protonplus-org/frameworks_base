@@ -24,6 +24,9 @@
     <!-- Build fingerprint from the stock ROM -->
     <string name="config_stockFingerprint" translatable="false"></string>
 
+    <!-- Device model (Build.MODEL) to spoof for netflix, if not empty -->
+    <string name="config_netflixSpoofModel" translatable="false"></string>
+
     <!-- List of system apps that are allowed to be locked with app lock.
           Use with extreme caution. -->
     <string-array name="config_appLockAllowedSystemApps" translatable="false" />
@@ -43,4 +46,8 @@
 
     <!-- Whether to cancel fingerprint operation if not idle -->
     <bool name="config_fpCancelIfNotIdle">false</bool>
+
+    <!-- Whether to spoof device as pixel for certain google apps, to
+         unlock pixel-exclusive features -->
+    <bool name="config_spoofGoogleApps">false</bool>
 </resources>
