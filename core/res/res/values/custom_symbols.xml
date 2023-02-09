@@ -45,7 +45,7 @@
     <java-symbol type="array" name="config_forceEnabledComponents" />
 
     <!-- PropImitationHooks -->
-    <java-symbol type="string" name="config_certifiedFingerprint" />
+    <java-symbol type="array" name="config_certifiedBuildProperties" />
     <java-symbol type="string" name="config_stockFingerprint" />
 
     <!-- Whether to allow process with media UID to access CameraServiceProxy -->
