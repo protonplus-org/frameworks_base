@@ -65,6 +65,7 @@ public class PropImitationHooks {
     private static final String PACKAGE_VELVET = "com.google.android.googlequicksearchbox";
     private static final String PACKAGE_WALLPAPER_EMOJI = "com.google.android.apps.emojiwallpaper";
     private static final String PACKAGE_WALLPAPER_EFFECT = "com.google.android.wallpaper.effects";
+    private static final String PACKAGE_PIXEL_LAUNCHER = "com.google.android.apps.nexuslauncher";
 
     private static final String PROCESS_GMS_PERSISTENT = PACKAGE_GMS + ".persistent";
     private static final String PROCESS_GMS_UNSTABLE = PACKAGE_GMS + ".unstable";
@@ -110,8 +111,15 @@ public class PropImitationHooks {
         "PIXEL_2021_MIDYEAR_EXPERIENCE"
     );
 
+    private static final Set<String> sTensorFeatureBlacklist = Set.of(
+        "PIXEL_2022_EXPERIENCE",
+        "PIXEL_2022_MIDYEAR_EXPERIENCE",
+        "PIXEL_2021_EXPERIENCE",
+        "PIXEL_2021_MIDYEAR_EXPERIENCE"
+    );
+
     private static volatile String sProcessName;
-    private static volatile boolean sIsGms, sIsFinsky, sIsPhotos;
+    private static volatile boolean sIsGms, sIsFinsky, sIsPhotos, sIsPixelLauncher, sIsASI;
 
     public static void setProps(Context context) {
         final String packageName = context.getPackageName();
@@ -126,6 +134,8 @@ public class PropImitationHooks {
         sIsGms = packageName.equals(PACKAGE_GMS) && processName.equals(PROCESS_GMS_UNSTABLE);
         sIsFinsky = packageName.equals(PACKAGE_FINSKY);
         sIsPhotos = sSpoofGapps && packageName.equals(PACKAGE_GPHOTOS);
+        sIsPixelLauncher = sSpoofGapps && packageName.equals(PACKAGE_PIXEL_LAUNCHER);
+        sIsASI = sSpoofGapps && packageName.equals(PACKAGE_ASI);
 
         /* Set certified properties for GMSCore
          * Set stock fingerprint for ARCore
@@ -248,6 +258,14 @@ public class PropImitationHooks {
     public static boolean hasSystemFeature(String name, boolean def) {
         if (sIsPhotos && def && sFeatureBlacklist.stream().anyMatch(name::contains)) {
             dlog("Blocked system feature " + name + " for Google Photos");
+            return false;
+        }
+        if (sIsASI && def && sTensorFeatureBlacklist.stream().anyMatch(name::contains)) {
+            dlog("Blocked system feature " + name + " for ASI");
+            return false;
+        }
+        if (sIsPixelLauncher && def && sTensorFeatureBlacklist.stream().anyMatch(name::contains)) {
+            dlog("Blocked system feature " + name + " for Pixel Launcher");
             return false;
         }
         return def;
